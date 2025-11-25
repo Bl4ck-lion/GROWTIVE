@@ -5,11 +5,41 @@ export default function MaterialLibrary() {
   const [materials, setMaterials] = useState([])
 
   useEffect(() => {
-    // Load materials from JSON file
-    fetch('/data/materials.json')
-      .then(response => response.json())
-      .then(data => setMaterials(data.materials))
-      .catch(error => console.error('Error loading materials:', error))
+    // Mock data for demo - in real app, fetch from JSON
+    setMaterials([
+      {
+        id: "math-1",
+        title: "Matematika Dasar",
+        level: "SD",
+        lessons: 15,
+        color: "from-blue-400 to-cyan-400",
+        description: "Belajar penjumlahan, pengurangan, dan konsep matematika dasar"
+      },
+      {
+        id: "physics-1",
+        title: "Fisika Mekanika", 
+        level: "SMP",
+        lessons: 20,
+        color: "from-purple-400 to-pink-400",
+        description: "Konsep gerak, gaya, dan energi dalam fisika"
+      },
+      {
+        id: "chemistry-1",
+        title: "Kimia Organik",
+        level: "SMA", 
+        lessons: 25,
+        color: "from-green-400 to-teal-400",
+        description: "Struktur dan reaksi senyawa karbon"
+      },
+      {
+        id: "biology-1",
+        title: "Biologi Sel",
+        level: "SMA",
+        lessons: 18,
+        color: "from-orange-400 to-red-400",
+        description: "Struktur dan fungsi sel makhluk hidup"
+      }
+    ])
   }, [])
 
   return (
